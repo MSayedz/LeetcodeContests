@@ -1,5 +1,7 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length())
+            return false;
 //         char[] sChars = s.toCharArray();
 //         char[] tChars = t.toCharArray();
         
@@ -17,11 +19,6 @@ class Solution {
             if(chars[cur] > 0)
                 chars[cur]--;
             else
-                return false;
-        }
-        
-        for(int i=0;i<256;i++){
-            if(chars[i] != 0)
                 return false;
         }
         
