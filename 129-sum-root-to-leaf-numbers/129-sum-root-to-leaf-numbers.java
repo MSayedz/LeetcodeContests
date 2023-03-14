@@ -14,30 +14,22 @@
  * }
  */
 class Solution {
-    public int sumNumbers(TreeNode root) {
-        if(root == null)
+    public int sumNumbers(TreeNode root) {if(root == null)
             return -1;
         List<Integer> intList = new ArrayList<>();
-        sumNumbers(root, intList, 0);
-        int sum = 0;
-        for(int cur:intList){
-        System.out.println(cur);
-            sum+=cur;
-        }
-        return sum;
+        sumNumbers(root, intList, 0);        
+        return intList.stream().mapToInt(Integer::intValue).sum();
     }
     
     public void sumNumbers(TreeNode root, List<Integer> intList, int rootVal) {
-        if(root == null){
-            return;
-        }
-        
-        rootVal = 10*rootVal + root.val;
-        if(root.left == null && root.right == null){
-            intList.add(rootVal);
-        }else{
-            sumNumbers(root.left, intList, rootVal);
-            sumNumbers(root.right, intList, rootVal);
+        if(root != null){
+            rootVal = 10*rootVal + root.val;
+            if(root.left == null && root.right == null){
+                intList.add(rootVal);
+            }else{
+                sumNumbers(root.left, intList, rootVal);
+                sumNumbers(root.right, intList, rootVal);
+            }
         }
     }
 }
