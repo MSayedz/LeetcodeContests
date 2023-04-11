@@ -1,6 +1,15 @@
 class Solution {
     public boolean canJump(int[] nums) {
-        return canJump(nums,0, new int[nums.length]);
+       int count=0;
+       for(int i=0;i<nums.length;i++){
+           if(count<i) 
+               return false;
+           if(i+nums[i] > count){
+               count = i+nums[i];
+           }
+       }
+       return true;
+        // return canJump(nums,0, new int[nums.length]);
     }
     
     private boolean canJump(int[] nums, int i,int[] memo){
