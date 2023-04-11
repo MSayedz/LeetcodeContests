@@ -9,7 +9,8 @@ class Solution {
                max = nums[i]+i;
            }
        }
-       return true;
+       return max>=nums.length-1;
+        
         // return canJump(nums,0, new int[nums.length]);
     }
     
