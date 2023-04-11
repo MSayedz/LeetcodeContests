@@ -4,9 +4,8 @@ class Solution {
        for(int i=0;i<nums.length;i++){
            if(count<i) 
                return false;
-           if(i+nums[i] > count){
-               count = i+nums[i];
-           }
+           if(nums[i]+i > count)
+               count = nums[i]+i;
        }
        return true;
         // return canJump(nums,0, new int[nums.length]);
