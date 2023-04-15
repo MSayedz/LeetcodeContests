@@ -13,16 +13,14 @@ class Solution {
         Arrays.sort(ends);
         
         int count = 0;
-        int res = 0;
         for(int i=0,j=0;i<intervals.length;i++){
             count ++;
             if(starts[i]>=ends[j]){
                 j++;
                 count --;
             }
-            res = Math.max(res, count);
         }
         
-        return Math.max(res, count);
+        return count;
     }
 }
