@@ -5,10 +5,9 @@ class Solution {
     public List<String> findItinerary(List<List<String>> tickets) {
         flights = new HashMap<>();
         path = new LinkedList<>();
-        for (List<String> ticket : tickets) {
-            flights.putIfAbsent(ticket.get(0), new PriorityQueue<>());
-            flights.get(ticket.get(0)).add(ticket.get(1));
-        }
+        for (List<String> ticket : tickets) 
+            flights.computeIfAbsent(ticket.get(0), 
+                                    k -> new PriorityQueue()).add(ticket.get(1));
         dfs("JFK");
         return path;
     }
