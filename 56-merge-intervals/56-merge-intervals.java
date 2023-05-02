@@ -21,6 +21,6 @@ class Solution {
         
         resList.add(new int[] {start, end});
         
-        return resList.stream().toArray((int[][]::new));
+        return resList.toArray(new int[0][0]);
     }
 }
