@@ -22,10 +22,11 @@ class Solution {
         if(left > right)
             return null;
         
-        int p = (left + right)/2;
-        TreeNode root = new TreeNode(nums[p]);
-        root.left = sortedArrayToBST(nums, left, p - 1);
-        root.right = sortedArrayToBST(nums, p + 1, right);
+        int i = (left + right)/2;
+        TreeNode root = new TreeNode(nums[i]);
+        
+        root.left = sortedArrayToBST(nums, left, i-1);
+        root.right = sortedArrayToBST(nums, i+1, right);
         
         return root;
     }
