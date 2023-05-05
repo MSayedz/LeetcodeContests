@@ -20,12 +20,10 @@ class Node {
 class Solution {
     public int maxDepth(Node root) {
         int max = 0;
-        if (root == null) {
-          return 0;
-        } else {
-            for(int i=0;i<root.children.size();i++)
-                max = Math.max(maxDepth(root.children.get(i)),max);
-        }
+        if (root == null)
+            return 0;
+        for(Node cur:root.children)
+            max = Math.max(maxDepth(cur), max);
         
         return max + 1;
     }
