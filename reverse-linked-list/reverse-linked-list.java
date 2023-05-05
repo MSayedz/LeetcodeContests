@@ -16,8 +16,8 @@ class Solution {
         while(head != null){
             nextNode = head.next;
             head.next = prevNode;
-            prevNode = head; 
-            head = nextNode;
+            prevNode = head;
+            head = nextNode;            
         }
         
         return prevNode;
