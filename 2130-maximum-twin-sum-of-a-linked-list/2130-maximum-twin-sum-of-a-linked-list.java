@@ -14,17 +14,17 @@ class Solution {
         ListNode fast = head;
         ListNode slow = head;
         int max = 0;
-        while(fast != null && fast != null){
+        while(fast != null && fast.next != null){
             stack.push(slow.val);
             fast = fast.next.next;
             slow = slow.next;
         }
         
-        while(slow != null && !stack.isEmpty()){
+        while(slow != null){
             max = Math.max(max, stack.pop() + slow.val);
             slow = slow.next;
         }
         
-        return (stack.isEmpty() && slow == null) ? max : -1; 
+        return max; 
     }
 }
