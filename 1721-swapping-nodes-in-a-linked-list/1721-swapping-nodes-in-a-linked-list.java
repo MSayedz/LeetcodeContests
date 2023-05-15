@@ -10,9 +10,7 @@
  */
 class Solution {
     public ListNode swapNodes(ListNode head, int k) {
-        ListNode fast = head;
-        ListNode kthNode = head;
-        ListNode slow = head;
+        ListNode fast = head, kthNode = head, slow = head;
         
         while(--k>0 && fast != null){
             fast = fast.next;
